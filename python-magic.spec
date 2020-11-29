@@ -35,11 +35,6 @@ and MIME-type output.
 %install
 %py_install
 
-%check
-export LC_ALL=en_US.UTF-8
-export PYTHONPATH=.
-%{__python3} test/test.py
-
 %files
 %doc README.md
 %license LICENSE
