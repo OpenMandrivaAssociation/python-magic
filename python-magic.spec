@@ -10,17 +10,6 @@ URL:            https://github.com/ahupp/python-magic
 Source0:        https://github.com/ahupp/python-magic/archive/%{version}/%{pypi_name}-%{version}.tar.gz
 Patch0:         python-magic-git-Fix-tests-with-file-5.39.patch
 
-BuildArch:      noarch
-
-%description
-This module uses ctypes to access the libmagic file type identification
-library. It makes use of the local magic database and supports both textual
-and MIME-type output.
-
-%package -n     python-%{pypi_name}
-Summary:        File type identification using libmagic
-Group:          Development/Python
-
 BuildRequires:  pkgconfig(python)
 BuildRequires:  python3dist(setuptools)
 # For tests.
@@ -31,7 +20,12 @@ Provides:       python3-magic = %{version}-%{release}
 Conflicts:      python3-magic < 5.39-2
 Conflicts:      python-magic < 5.39-2
 Conflicts:      python-file
+BuildArch:      noarch
 
+%description
+This module uses ctypes to access the libmagic file type identification
+library. It makes use of the local magic database and supports both textual
+and MIME-type output.
 %prep
 %autosetup -p1 -n %{pypi_name}-%{version}
 
