@@ -14,18 +14,15 @@ BuildRequires:  pkgconfig(python)
 BuildRequires:  python3dist(setuptools)
 # For tests.
 BuildRequires:  locales-en
-
-Provides:       python-magic = %{version}-%{release}
-Provides:       python3-magic = %{version}-%{release}
-Conflicts:      python3-magic < 5.39-2
-Conflicts:      python-magic < 5.39-2
-Conflicts:      python-file
+Provides:       python3-magic = %{EVRD}
+Conflicts:      python-file-magic
 BuildArch:      noarch
 
 %description
 This module uses ctypes to access the libmagic file type identification
 library. It makes use of the local magic database and supports both textual
 and MIME-type output.
+
 %prep
 %autosetup -p1 -n %{pypi_name}-%{version}
 
