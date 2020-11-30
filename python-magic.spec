@@ -15,7 +15,7 @@ BuildRequires:  python3dist(setuptools)
 # For tests.
 BuildRequires:  locales-en
 Provides:       python3-magic = %{EVRD}
-Conflicts:      python-file-magic
+#Conflicts:      python-file-magic
 BuildArch:      noarch
 
 %description
